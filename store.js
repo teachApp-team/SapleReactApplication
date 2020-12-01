@@ -63,11 +63,8 @@ function startReduce(state, action) {
   console.log(q);
   console.log(state.data[q].Japanese);
   return {
-    message:'START',
-    count: 0,
-
     data:state.data,
-    check:state.check,
+    check:"NON",
     question: state.data[q].English,
     answer: state.data[q].Japanese,
     alternative:[state.data[q+1].Japanese,
@@ -91,9 +88,6 @@ function checkReduce(state, action) {
     wrong = state.wrong + 1;
   }
   return {
-    message:'START',
-    count: 0,
-
     data:state.data,
     check: check,
     question: state.question,
